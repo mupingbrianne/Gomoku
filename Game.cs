@@ -53,7 +53,9 @@ namespace Gomoku
                     {
                         int adjcentX = placedXId + countR * xDir;
                         int adjcentY = placedYId + countR * yDir;
-                        if (board.GetPieceType(adjcentX,adjcentY)!=currentPlayer)
+                        if (adjcentX<0||adjcentX>=9||
+                            adjcentY<0||adjcentY>=9||
+                            board.GetPieceType(adjcentX,adjcentY)!=currentPlayer)
                         {
                             break;
                         }
@@ -64,7 +66,9 @@ namespace Gomoku
                     {
                         int adjcentX = placedXId-countL * xDir;
                         int adjcentY = placedYId-countL * yDir;
-                        if (board.GetPieceType(adjcentX, adjcentY) != currentPlayer)
+                        if (adjcentX < 0 || adjcentX >= 9 ||
+                            adjcentY < 0 || adjcentY >= 9 ||
+                            board.GetPieceType(adjcentX, adjcentY) != currentPlayer)
                         {
                             break;
                         }
